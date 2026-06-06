@@ -14,6 +14,13 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                'coconuthusk': '#2A2323',
+                'goldennut': '#F7C758',
+                'coastalfern': '#92B598',
+                'sandyshore': '#EEE4CA',
+                'tamanuleaf' : '#1F3A25',
+            },
         },
     },
 

@@ -1,21 +1,3 @@
-<?php
-
-use App\Livewire\Actions\Logout;
-use Livewire\Volt\Component;
-
-new class extends Component
-{
-    /**
-     * Log the current user out of the application.
-     */
-    public function logout(Logout $logout): void
-    {
-        $logout();
-
-        $this->redirect('/', navigate: true);
-    }
-}; ?>
-
 <!-- Include this script tag or install `@tailwindplus/elements` via npm: -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script> -->
 <div class="bg-white">
@@ -210,6 +192,13 @@ new class extends Component
             </div>
           </div>
 
+          <div class="border-t border-gray-200 px-4 py-6">
+            <a href="#" class="-m-2 flex items-center p-2">
+              <img src="https://tailwindcss.com/plus-assets/img/flags/flag-canada.svg" alt="" class="block h-auto w-5 shrink-0" />
+              <span class="ml-3 block text-base font-medium text-gray-900">CAD</span>
+              <span class="sr-only">, change currency</span>
+            </a>
+          </div>
         </el-dialog-panel>
       </div>
     </dialog>
@@ -445,44 +434,10 @@ new class extends Component
           </el-popover-group>
 
           <div class="ml-auto flex items-center">
-            <!-- Search -->
-            <div class="flex lg:ml-6">
-              <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
-                <span class="sr-only">Search</span>
-                <x-heroicon-o-magnifying-glass class="h-6 w-6"/>
-              </a>
-            </div>
-            
             @if(auth()->user())
-              <!-- Settings Dropdown -->
-                <div class="hidden sm:flex sm:items-center sm:ms-6">
-                    <x-dropdown align="right" width="48">
-                        <x-slot name="trigger">
-                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
-                                <div x-data="{{ json_encode(['name' => auth()->user()->name]) }}" x-text="name" x-on:profile-updated.window="name = $event.detail.name"></div>
-
-                                <div class="ms-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                            </button>
-                        </x-slot>
-
-                        <x-slot name="content">
-                            <x-dropdown-link :href="route('profile')" wire:navigate>
-                                {{ __('Profile') }}
-                            </x-dropdown-link>
-
-                            <!-- Authentication -->
-                            <button wire:click="logout" class="w-full text-start">
-                                <x-dropdown-link>
-                                    {{ __('Log Out') }}
-                                </x-dropdown-link>
-                            </button>
-                        </x-slot>
-                    </x-dropdown>
-                </div>
+              {{-- Dashboard --}}
+              <a href="{{ route('dashboard') }}" class="text-sm font-medium text-gray-700 hover:text-gray-800" wire:navigate href="{{ route('dashboard') }}">Dsashboard</a>
+              {{-- Logout --}}
             @else
               <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                 <a href="/login" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
@@ -491,7 +446,21 @@ new class extends Component
               </div>
             @endif
 
-            
+            <div class="hidden lg:ml-8 lg:flex">
+              <a href="#" class="flex items-center text-gray-700 hover:text-gray-800">
+                <x-heroicon-c-flag class="block h-auto w-5 shrink-0"/>
+                <span class="ml-3 block text-sm font-medium">US</span>
+                <span class="sr-only"> change currency</span>
+              </a>
+            </div>
+
+            <!-- Search -->
+            <div class="flex lg:ml-6">
+              <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Search</span>
+                <x-heroicon-o-magnifying-glass class="h-6 w-6"/>
+              </a>
+            </div>
             <!-- Cart -->
             <div class="ml-4 flow-root lg:ml-6">
               <a href="#" class="group -m-2 flex items-center p-2 text-gray-500 hover:text-tamanu-oil transition">
