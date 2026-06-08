@@ -35,182 +35,54 @@ new class extends Component
             </button>
           </div>
 
-          <!-- Links -->
-          <el-tab-group class="mt-2 block">
-            <div class="border-b border-gray-200">
-              <el-tab-list class="-mb-px flex space-x-8 px-4">
-                <button class="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Women</button>
-                <button class="flex-1 whitespace-nowrap border-b-2 border-transparent px-1 py-4 text-base font-medium text-gray-900 aria-selected:border-indigo-600 aria-selected:text-indigo-600">Men</button>
-              </el-tab-list>
-            </div>
-            <el-tab-panels>
-              <div class="space-y-10 px-4 pb-8 pt-10">
-                <div class="grid grid-cols-2 gap-x-4">
-                  <div class="group relative text-sm">
-                    <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                    <a href="#" class="mt-6 block font-medium text-gray-900">
-                      <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                      New Arrivals
-                    </a>
-                    <p aria-hidden="true" class="mt-1">Shop now</p>
-                  </div>
-                  <div class="group relative text-sm">
-                    <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                    <a href="#" class="mt-6 block font-medium text-gray-900">
-                      <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                      Basic Tees
-                    </a>
-                    <p aria-hidden="true" class="mt-1">Shop now</p>
-                  </div>
-                </div>
-                <div>
-                  <p id="women-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
-                  <ul role="list" aria-labelledby="women-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Dresses</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Denim</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Sweaters</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">T-Shirts</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Jackets</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Activewear</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Browse All</a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p id="women-accessories-heading-mobile" class="font-medium text-gray-900">Accessories</p>
-                  <ul role="list" aria-labelledby="women-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
-                    </li>
-                  </ul>
-                </div>
-                
-              </div>
-              <div hidden class="space-y-10 px-4 pb-8 pt-10">
-                <div class="grid grid-cols-2 gap-x-4">
-                  <div class="group relative text-sm">
-                    <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg" alt="Drawstring top with elastic loop closure and textured interior padding." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                    <a href="#" class="mt-6 block font-medium text-gray-900">
-                      <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                      New Arrivals
-                    </a>
-                    <p aria-hidden="true" class="mt-1">Shop now</p>
-                  </div>
-                  <div class="group relative text-sm">
-                    <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg" alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                    <a href="#" class="mt-6 block font-medium text-gray-900">
-                      <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                      Artwork Tees
-                    </a>
-                    <p aria-hidden="true" class="mt-1">Shop now</p>
-                  </div>
-                </div>
-                <div>
-                  <p id="men-clothing-heading-mobile" class="font-medium text-gray-900">Clothing</p>
-                  <ul role="list" aria-labelledby="men-clothing-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Tops</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Pants</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Sweaters</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">T-Shirts</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Jackets</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Activewear</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Browse All</a>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <p id="men-accessories-heading-mobile" class="font-medium text-gray-900">Accessories</p>
-                  <ul role="list" aria-labelledby="men-accessories-heading-mobile" class="mt-6 flex flex-col space-y-6">
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Watches</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Wallets</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Bags</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Sunglasses</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Hats</a>
-                    </li>
-                    <li class="flow-root">
-                      <a href="#" class="-m-2 block p-2 text-gray-500">Belts</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </el-tab-panels>
-          </el-tab-group>
+          <!-- Profile / sign in -->
+          @auth
+            <x-dropdown-link :href="route('profile')" wire:navigate>
+                {{ __('Profile') }}
+            </x-dropdown-link>
 
-          <div class="space-y-6 border-t border-gray-200 px-4 py-6">
-            <div class="flow-root">
-              <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Company</a>
+            <!-- Authentication -->
+            <button wire:click="logout" class="w-full text-start">
+                <x-dropdown-link>
+                    {{ __('Log Out') }}
+                </x-dropdown-link>
+            </button>
+            
+          @else
+            <div class="space-y-6 border-t border-gray-200 px-4 py-2">
+              <div class="flow-root">
+                <a href="/login" class="-m-2 block p-2 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100">Sign in</a>
+              </div>
+              <div class="flow-root">
+                <a href="/register" class="-m-2 block p-2 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100">Create account</a>
+              </div>
             </div>
-            <div class="flow-root">
-              <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Stores</a>
-            </div>
-          </div>
+          @endauth
 
-          <div class="space-y-6 border-t border-gray-200 px-4 py-6">
+          <div class="space-y-6 border-t border-gray-200 px-4 py-2">
+            
             <div class="flow-root">
-              <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Sign in</a>
+                <a href="#" class="-my-2 -mx-4 block py-2 px-4 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150">
+                    About Us
+                </a>
             </div>
+
             <div class="flow-root">
-              <a href="#" class="-m-2 block p-2 font-medium text-gray-900">Create account</a>
+                <a href="#" class="-my-2 -mx-4 block py-2 px-4 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150">
+                    Contact Us
+                </a>
             </div>
+
+            <div class="flow-root">
+                <a href="#" class="-my-2 -mx-4 block py-2 px-4 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150">
+                    Our Blog
+                </a>
+            </div>
+            
           </div>
 
         </el-dialog-panel>
+        
       </div>
     </dialog>
   </el-dialog>
@@ -221,6 +93,7 @@ new class extends Component
     <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="border-b border-gray-200">
         <div class="flex h-16 items-center">
+          <!-- Mobile menu burger button -->
           <button type="button" command="show-modal" commandfor="mobile-menu" class="relative rounded-md bg-white p-2 text-gray-400 lg:hidden">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open menu</span>
@@ -231,229 +104,28 @@ new class extends Component
 
           <!-- Logo -->
           <div class="ml-4 flex lg:ml-0">
-            <a href="#">
-              <span class="sr-only">Your Company</span>
-              <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600" alt="" class="h-8 w-auto" />
+            <a href="/">
+              <span class="sr-only">Lana's Logo</span>
+              <img src="https://duplinestephanus.github.io/WebbApp-Files/logo/alanas-logo.png" alt="" class="h-14 w-auto" />
             </a>
           </div>
 
-          <!-- Flyout menus -->
-          <el-popover-group class="group/popover-group hidden lg:ml-8 lg:block lg:self-stretch">
-            <div class="flex h-full space-x-8">
-              <div class="group/popover flex">
-                <div class="relative flex">
-                  <button popovertarget="desktop-menu-women" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-[:not(:has([open],:popover-open,:open))]/popover:text-gray-700 group-[:not(:has([open],:popover-open,:open))]/popover:hover:text-gray-800 group-has-[[open],:popover-open,:open]/popover:text-indigo-600">
-                    Women
-                    <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-has-[[open],:popover-open,:open]/popover:bg-indigo-600 group-has-[[open],:popover-open,:open]/popover-group:duration-150 group-has-[[open],:popover-open,:open]/popover-group:ease-out"></span>
-                  </button>
-                </div>
-                <el-popover id="desktop-menu-women" anchor="bottom" popover class="m-0 w-full overflow-visible bg-white p-0 text-sm text-gray-500 transition [--anchor-gap:1px] [transition-behavior:allow-discrete] backdrop:bg-transparent open:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in">
-                  <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                  <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow"></div>
-                  <div class="relative bg-white">
-                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                      <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                        <div class="col-start-2 grid grid-cols-2 gap-x-8">
-                          <div class="group relative text-base sm:text-sm">
-                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-01.jpg" alt="Models sitting back to back, wearing Basic Tee in black and bone." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                            <a href="#" class="mt-6 block font-medium text-gray-900">
-                              <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                              New Arrivals
-                            </a>
-                            <p aria-hidden="true" class="mt-1">Shop now</p>
-                          </div>
-                          <div class="group relative text-base sm:text-sm">
-                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/mega-menu-category-02.jpg" alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                            <a href="#" class="mt-6 block font-medium text-gray-900">
-                              <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                              Basic Tees
-                            </a>
-                            <p aria-hidden="true" class="mt-1">Shop now</p>
-                          </div>
-                        </div>
-                        <div class="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                          <div>
-                            <p id="Clothing-heading" class="font-medium text-gray-900">Clothing</p>
-                            <ul role="list" aria-labelledby="Clothing-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Tops</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Dresses</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Pants</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Denim</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Sweaters</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">T-Shirts</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Jackets</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Activewear</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Browse All</a>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <p id="Accessories-heading" class="font-medium text-gray-900">Accessories</p>
-                            <ul role="list" aria-labelledby="Accessories-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Watches</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Wallets</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Bags</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Sunglasses</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Hats</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Belts</a>
-                              </li>
-                            </ul>
-                          </div>
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </el-popover>
-              </div>
-              <div class="group/popover flex">
-                <div class="relative flex">
-                  <button popovertarget="desktop-menu-men" class="relative flex items-center justify-center text-sm font-medium transition-colors duration-200 ease-out group-[:not(:has([open],:popover-open,:open))]/popover:text-gray-700 group-[:not(:has([open],:popover-open,:open))]/popover:hover:text-gray-800 group-has-[[open],:popover-open,:open]/popover:text-indigo-600">
-                    Men
-                    <span aria-hidden="true" class="absolute inset-x-0 -bottom-px z-30 h-0.5 bg-transparent duration-200 ease-in group-has-[[open],:popover-open,:open]/popover:bg-indigo-600 group-has-[[open],:popover-open,:open]/popover-group:duration-150 group-has-[[open],:popover-open,:open]/popover-group:ease-out"></span>
-                  </button>
-                </div>
-                <el-popover id="desktop-menu-men" anchor="bottom" popover class="m-0 w-full overflow-visible bg-white p-0 text-sm text-gray-500 transition [--anchor-gap:1px] [transition-behavior:allow-discrete] backdrop:bg-transparent open:block data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in">
-                  <!-- Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow -->
-                  <div aria-hidden="true" class="absolute inset-0 top-1/2 bg-white shadow"></div>
-                  <div class="relative bg-white">
-                    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                      <div class="grid grid-cols-2 gap-x-8 gap-y-10 py-16">
-                        <div class="col-start-2 grid grid-cols-2 gap-x-8">
-                          <div class="group relative text-base sm:text-sm">
-                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg" alt="Drawstring top with elastic loop closure and textured interior padding." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                            <a href="#" class="mt-6 block font-medium text-gray-900">
-                              <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                              New Arrivals
-                            </a>
-                            <p aria-hidden="true" class="mt-1">Shop now</p>
-                          </div>
-                          <div class="group relative text-base sm:text-sm">
-                            <img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-02-image-card-06.jpg" alt="Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt." class="aspect-square w-full rounded-lg bg-gray-100 object-cover group-hover:opacity-75" />
-                            <a href="#" class="mt-6 block font-medium text-gray-900">
-                              <span aria-hidden="true" class="absolute inset-0 z-10"></span>
-                              Artwork Tees
-                            </a>
-                            <p aria-hidden="true" class="mt-1">Shop now</p>
-                          </div>
-                        </div>
-                        <div class="row-start-1 grid grid-cols-3 gap-x-8 gap-y-10 text-sm">
-                          <div>
-                            <p id="Clothing-heading" class="font-medium text-gray-900">Clothing</p>
-                            <ul role="list" aria-labelledby="Clothing-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Tops</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Pants</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Sweaters</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">T-Shirts</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Jackets</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Activewear</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Browse All</a>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <p id="Accessories-heading" class="font-medium text-gray-900">Accessories</p>
-                            <ul role="list" aria-labelledby="Accessories-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Watches</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Wallets</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Bags</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Sunglasses</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Hats</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Belts</a>
-                              </li>
-                            </ul>
-                          </div>
-                          <div>
-                            <p id="Brands-heading" class="font-medium text-gray-900">Brands</p>
-                            <ul role="list" aria-labelledby="Brands-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Re-Arranged</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Counterfeit</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">Full Nelson</a>
-                              </li>
-                              <li class="flex">
-                                <a href="#" class="hover:text-gray-800">My Way</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </el-popover>
-              </div>
-
-              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Company</a>
-              <a href="#" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Stores</a>
-            </div>
-          </el-popover-group>
+          <div class="hidden m-6 lg:flex lg:flex-1 lg:items-center lg:justify-start lg:space-x-6">
+            <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">About Us</a>
+            <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">Contact Us</a>
+            <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">Our Blog</a>
+          </div>
 
           <div class="ml-auto flex items-center">
             <!-- Search -->
             <div class="flex lg:ml-6">
-              <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+              <a href="#" class="p-2 text-gray-500 hover:text-gray-700">
                 <span class="sr-only">Search</span>
                 <x-heroicon-o-magnifying-glass class="h-6 w-6"/>
               </a>
             </div>
             
-            @if(auth()->user())
+            @auth
               <!-- Settings Dropdown -->
                 <div class="hidden sm:flex sm:items-center sm:ms-6">
                     <x-dropdown align="right" width="48">
@@ -489,14 +161,13 @@ new class extends Component
                 <span aria-hidden="true" class="h-6 w-px bg-gray-200"></span>
                 <a href="/register" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
               </div>
-            @endif
+            @endauth
 
-            
             <!-- Cart -->
             <div class="ml-4 flow-root lg:ml-6">
-              <a href="#" class="group -m-2 flex items-center p-2 text-gray-500 hover:text-tamanu-oil transition">
-                <x-heroicon-o-shopping-bag class="h-6 w-6" />
-                <span id="cart-total" class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+              <a href="#" class="group -m-2 flex items-center p-2 text-gray-500">
+                <x-heroicon-o-shopping-bag class="h-6 w-6 hover:text-gray-700" />
+                <span id="cart-total" class="ml-2 text-sm font-medium text-gray-500 hover:text-gray-700">0</span>
                 <span class="sr-only">items in cart, view bag</span>
               </a>
             </div>
