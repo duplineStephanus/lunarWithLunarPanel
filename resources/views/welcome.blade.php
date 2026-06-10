@@ -4,4 +4,6 @@
                 <livewire:product-list />
             </div>
     </div>
+    <!-- lets test out this commit...by changis this line -->
+    ...................hello from welcome page
 </x-app-layout>
