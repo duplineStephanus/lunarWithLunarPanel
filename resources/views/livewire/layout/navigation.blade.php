@@ -119,10 +119,10 @@ new class extends Component
           <div class="ml-auto flex items-center">
             <!-- Search -->
             <div class="flex lg:ml-6">
-              <a href="#" class="p-2 text-gray-500 hover:text-gray-700">
-                <span class="sr-only">Search</span>
+              <button type="button" wire:click="$dispatchTo('components.product-search', 'openSearch')" class="p-2 text-gray-400 hover:text-tamanu-leaf transition">
+                <span class="sr-only">Search Products</span>
                 <x-heroicon-o-magnifying-glass class="h-6 w-6"/>
-              </a>
+              </button>
             </div>
             
             @auth
