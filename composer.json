@@ -12,7 +12,9 @@
         "livewire/flux": "^2.14",
         "livewire/livewire": "^3.6.4",
         "livewire/volt": "^1.7.0",
-        "lunarphp/lunar": "^1.0"
+        "lunarphp/lunar": "^1.0",
+        "lunarphp/search": "^1.3",
+        "meilisearch/meilisearch-php": "^1.16"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
