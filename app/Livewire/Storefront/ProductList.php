@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Storefront;
 
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -18,6 +18,6 @@ class ProductList extends Component
         ])
         ->paginate(12);
 
-        return view('livewire.product-list', ['products' => $products]);
+        return view('livewire.storefront.product-list', ['products' => $products]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Storefront\ProductShow;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
@@ -7,6 +8,13 @@ Route::view('/', 'welcome');
 Route::get('/products', function () {
     return view('products');
 });
+
+/* Route::group(['prefix' => 'products'], function () {
+    // Dynamic single product viewer route
+    Route::get('{slug}', ProductShow::class)->name('storefront.products.show');
+}); */
+
+Route::get('products/{slug}', ProductShow::class)->name('storefront.products.show');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
