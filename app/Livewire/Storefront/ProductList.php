@@ -16,7 +16,7 @@ class ProductList extends Component
             'variants.prices',
             'thumbnail',
         ])
-        ->paginate(12);
+        ->paginate(4);
 
         return view('livewire.storefront.product-list', ['products' => $products]);
     }

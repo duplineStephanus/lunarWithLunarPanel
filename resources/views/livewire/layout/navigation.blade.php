@@ -74,8 +74,8 @@ new class extends Component
             </div>
 
             <div class="flow-root">
-                <a href="#" class="-my-2 -mx-4 block py-2 px-4 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150">
-                    Our Blog
+                <a href="/collections" class="-my-2 -mx-4 block py-2 px-4 font-normal text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition duration-150">
+                    Collections
                 </a>
             </div>
             
@@ -113,7 +113,7 @@ new class extends Component
           <div class="hidden m-6 lg:flex lg:flex-1 lg:items-center lg:justify-start lg:space-x-6">
             <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">About Us</a>
             <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">Contact Us</a>
-            <a href="#" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">Our Blog</a>
+            <a href="/collections" class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700">Collections</a>
           </div>
 
           <div class="ml-auto flex items-center">

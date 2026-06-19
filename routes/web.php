@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\Storefront\CollectionController;
 use App\Livewire\Storefront\ProductShow;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
 
-Route::get('/products', function () {
-    return view('products');
-});
+Route::get('/collections', [CollectionController::class, 'index'])->name('storefront.collections.show');
 
 /* Route::group(['prefix' => 'products'], function () {
     // Dynamic single product viewer route
