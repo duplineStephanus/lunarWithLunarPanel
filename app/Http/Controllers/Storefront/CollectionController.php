@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Storefront;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Lunar\Models\Collection;
-use Lunar\Models\Url;
 
 class CollectionController extends Controller
 {
@@ -21,6 +20,6 @@ class CollectionController extends Controller
         //dd($collections);
 
         // Pass the entire collections list to your storefront view
-        return view('storefront.collection-show', compact('collections'));
+        return view('welcome', compact('collections'));
     }
 }

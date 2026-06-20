@@ -33,6 +33,10 @@
             <main>
                 {{ $slot }}
             </main>
+
+
+            <!-- Footer -->
+            
         </div>
         @fluxScripts
         @livewire('components.product-search')
