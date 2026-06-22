@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
             ->brandName('Lana')
             ->brandLogo(asset('/images/logo-emblem.png'))
             ->brandLogoHeight('4rem')
-           ->colors([
+            ->colors([
                 'primary' => Color::hex('#244A32'),
             ]))
         ->register();
