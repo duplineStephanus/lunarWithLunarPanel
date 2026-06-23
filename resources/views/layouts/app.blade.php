@@ -18,7 +18,7 @@
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             <!-- Navigation -->
-            <livewire:layout.navigation />
+            <livewire:layout.navigation/>
 
             <!-- Page Heading -->
             @if (isset($header))
@@ -38,6 +38,9 @@
             <!-- Footer -->
             
         </div>
+
+        <x-footer/>
+
         @fluxScripts
         @livewire('components.product-search')
         <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>

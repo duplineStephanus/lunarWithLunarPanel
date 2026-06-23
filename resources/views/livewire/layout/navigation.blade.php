@@ -97,10 +97,10 @@ new class extends Component
           </button>
 
           <!-- Logo -->
-          <div class="ml-4 flex lg:ml-0">
+          <div class="ml-4 flex lg:ml-0 h-10">
             <a href="/">
               <span class="sr-only">Lana's Logo</span>
-              <img src="https://duplinestephanus.github.io/WebbApp-Files/logo/alanas-logo.png" alt="" class="h-14 w-auto" />
+              <x-application-logo />
             </a>
           </div>
 
