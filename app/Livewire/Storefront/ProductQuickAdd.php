@@ -1,70 +1,99 @@
-<?php
+<?php 
 
 namespace App\Livewire\Storefront;
 
 use Livewire\Component;
 use Lunar\Models\Product;
+use Lunar\Models\ProductOptionValue;
 use Lunar\Models\ProductVariant;
-use Lunar\Facades\CartSession;
+use Lunar\Models\Discount;
 
 class ProductQuickAdd extends Component
 {
     public Product $product;
-    public ?int $selectedVariantId = null;
+    
+    // Holds the selected ProductOptionValue ID (e.g., ID for "1 oz")
+    public ?int $selectedOptionValueId = null;
 
-    public function mount(Product $product)
+    public function mount()
     {
-        $this->product = $product;
-
-        // Automatically pre-select the first available variant
-        $firstVariant = $this->product->variants->first();
+        // Fail-safe default: load the very first variant's first assigned option value
+        $firstVariant = $this->product->variants()->first(); //
         if ($firstVariant) {
-            $this->selectedVariantId = $firstVariant->id;
+            $this->selectedOptionValueId = $firstVariant->values()->first()?->id; //
         }
     }
 
     /**
-     * Computed property to safely grab the currently selected variant
+     * Computed Property: Grab only option values available for this specific product's variants.
      */
-    public function getSelectedVariantProperty(): ?ProductVariant
+    public function getAvailableSizesProperty()
     {
-        return $this->product->variants->firstWhere('id', $this->selectedVariantId);
+        return ProductOptionValue::query()
+            ->whereHas('variants', function ($query) { //
+                $query->where('product_id', $this->product->id); //
+            })
+            ->orderBy('position') //
+            ->get();
     }
 
     /**
-     * Computed property to fetch live price data (including tier, currency, and discounts)
+     * Computed Property: Dynamically locate the unique variant matching the customer's selection.
      */
-    public function getPricingProperty()
+    public function getCurrentVariantProperty(): ?ProductVariant
     {
-        $variant = $this->selectedVariant;
-
-        if (!$variant) {
+        if (!$this->selectedOptionValueId) {
             return null;
         }
 
-        // Lunar's pricing manager automatically checks for active group/cart discounts
-        return $variant->pricing()->get();
+        return ProductVariant::query()
+            ->where('product_id', $this->product->id) //
+            ->whereHas('values', function ($query) { //
+                $query->where('lunar_product_option_values.id', $this->selectedOptionValueId);
+            })
+            ->first();
     }
 
     /**
-     * Add the selected size variant to the active Lunar cart session
+     * Computed Property: Pull calculations for prices and active discounts.
      */
-    public function addToCart()
+    public function getPriceDataProperty(): array
     {
-        if (!$this->selectedVariantId) {
-            return;
+        $variant = $this->currentVariant;
+        if (!$variant) {
+            return ['original' => 0, 'current' => 0, 'discount' => null];
         }
 
-        $cart = CartSession::current();
+        // Use standard HasPrices trait methods to fetch prices safely
+        $basePriceModel = $variant->getPrices()->first(); //
+        $originalPrice = $basePriceModel ? $basePriceModel->price->value / 100 : 0;
 
-        if (!$cart) {
-            $cart = CartSession::create();
+        // Query the discount model
+        $activeDiscount = Discount::query()
+            ->active()
+            ->usable()
+            ->where(function ($query) use ($variant) {
+                $query->products([$this->product->id])
+                      ->orWhere->productVariants([$variant->id]);
+            })
+            ->first();
+
+        $currentPrice = $originalPrice;
+        $discountLabel = null;
+
+        if ($activeDiscount) {
+            if ($activeDiscount->type === \Lunar\DiscountTypes\Percentage::class) {
+                $percentage = $activeDiscount->data['percentage'] ?? 0;
+                $currentPrice = $originalPrice * (1 - ($percentage / 100));
+                $discountLabel = "{$percentage}% off";
+            }
         }
 
-        $cart->add($this->selectedVariant, 1);
-
-        // Optional: Emit a browser event or global Livewire event to update a nav cart counter
-        $this->dispatch('cart-updated');
+        return [
+            'original' => $originalPrice,
+            'current' => $currentPrice,
+            'discount' => $discountLabel,
+        ];
     }
 
     public function render()

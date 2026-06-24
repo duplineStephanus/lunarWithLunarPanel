@@ -13,7 +13,9 @@ class ProductList extends Component
     public function render()
     {
         $products = Product::with([
-            'thumbnail'
+            'thumbnail',
+            'variants.prices.currency', // Eagerloads prices instantly
+            'variants.values.option'    // Eagerloads option value labels (Sizes)
         ])
         ->whereStatus('published')
         ->paginate(12);
