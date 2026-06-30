@@ -3,8 +3,8 @@
 namespace App\Livewire\Storefront;
 
 use Livewire\Component;
+use Lunar\Facades\CartSession;
 use Lunar\Models\Discount;
-use Lunar\Models\Discountable;
 use Lunar\Models\Product;
 use Lunar\Models\ProductVariant;
 
@@ -121,31 +121,62 @@ class ProductCard extends Component
         $discount = $this->discount;
         
         if (!$price || !$discount) {
-            return $price; // Return original price if no discount
+            return $price;
         }
         
-        $discountData = $discount->data;
-        $priceAmount = $price->value / 100; // Price is already a numeric value
-        //dd($priceAmount);
+        // Extract the numeric value from Price object if needed
+        $priceAmount = is_numeric($price) ? $price : $price->value;
         
-        // If it's a percentage discount
+        $discountData = $discount->data;
+        
         if (isset($discountData['percentage']) && $discountData['percentage']) {
             $percentage = $discountData['percentage'];
             $discountAmount = ($priceAmount * $percentage) / 100;
-            return $priceAmount - $discountAmount;
+            $priceAmount = ($priceAmount - $discountAmount)/100;
+            return $priceAmount;
         }
         
-        // If it's a fixed value discount
         if (isset($discountData['fixed_value']) && $discountData['fixed_value']) {
             $fixedValues = $discountData['fixed_values'] ?? [];
-            // Get the USD value (or first available currency)
-            $discountAmount = $fixedValues['USD'] ?? array_values($fixedValues)[0] ?? 0;
-            // Convert from cents to dollars
-            $discountAmount = $discountAmount / 100;
-            return max(0, $priceAmount - $discountAmount); // Don't go below 0
+            // Get the discount amount in cents
+            $discountAmountInCents = $fixedValues['USD'] ?? array_values($fixedValues)[0] ?? 0;
+            // Subtract directly from priceAmount (both are in cents)
+
+            $priceAmount = max(0, $priceAmount - $discountAmountInCents)/100;
+            
+            return $priceAmount;
         }
         
-        return $price; // Return original if no applicable discount
+        return $priceAmount;
+    }
+
+    /**
+     * NEW: Add selected variant to cart (quantity +1)
+     */
+    public function addToCart()
+    {
+        $variant = $this->variant;
+
+        if (!$variant) {
+            session()->flash('error', 'Unable to add to cart. Variant not found.');
+            return;
+        }
+
+        try {
+            // Add 1 quantity to cart (Lunar automatically increments if variant exists)
+            CartSession::add($variant, 1);
+
+            // Get updated cart total
+            $cart = CartSession::current();
+            $cartTotal = $cart->lines->sum('quantity');
+
+            // Dispatch event to update cart total in navigation
+            $this->dispatch('cart-updated', total: $cartTotal);
+
+            session()->flash('message', 'Added to cart successfully!');
+        } catch (\Exception $e) {
+            session()->flash('error', 'Error adding to cart: ' . $e->getMessage());
+        }
     }
 
     public function render()

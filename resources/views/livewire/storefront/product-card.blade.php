@@ -96,8 +96,8 @@
             <div class="flex flex-col text-sm">
                 {{-- Discounted Price (shown only if discount exists) --}}
                 @if($discount && $discountedPrice)
-                    <div class="font-semibold text-tamanuleaf  ">
-                        ${{ number_format($discountedPrice, 2) }}
+                    <div class="font-semibold text-lg text-tamanuleaf">
+                        ${{ number_format((float)$discountedPrice, 2) }}
                     </div>
                 @endif
 
@@ -117,7 +117,11 @@
 
         {{-- Add to cart btn --}}
         <div class="ml-4 flow-root lg:ml-6">
-            <button class="add-to-btn relative group -m-2 p-2 text-gray-500 hover:text-tamanuleaf">
+            <button 
+                wire:click="addToCart"
+                wire:loading.attr="disabled"
+                class="add-to-btn relative group -m-2 p-2 text-gray-500 hover:text-tamanuleaf transition disabled:opacity-50"
+            >
                 <x-heroicon-o-shopping-bag class="h-6 w-6 "/>
                 <span class="absolute bottom-2 left-3 flex items-center justify-center w-4 h-4 text-xs font-bold">+</span>
                 <span class="sr-only">Add to cart button</span>

@@ -3,12 +3,7 @@
 use App\Livewire\Storefront\ProductShow;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'welcome');
-
-/* Route::group(['prefix' => 'products'], function () {
-    // Dynamic single product viewer route
-    Route::get('{slug}', ProductShow::class)->name('storefront.products.show');
-}); */
+Route::view('/', 'welcome')->name('welcome');
 
 Route::get('products/{slug}', ProductShow::class)->name('storefront.products.show');
 
