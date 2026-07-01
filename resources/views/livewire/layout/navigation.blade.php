@@ -170,6 +170,7 @@ new class extends Component
                     <span class="sr-only">items in cart, view bag</span>
                 </a>
             </div>
+            
           </div>
         </div>
       </div>
