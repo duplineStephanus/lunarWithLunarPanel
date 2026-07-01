@@ -5,7 +5,7 @@
 
 <div class="group relative mx-2 max-w-sm min-w-xs p-4 border rounded-xl transition-all duration-900 ease-in-out hover:shadow-lg hover:border-gray-400 bg-white">
 
-    <a href="{{ route('storefront.products.show', $this->product->defaultUrl?->slug) }}">
+    <a href="">
         {{-- Product Image --}}
         @if ($this->product->thumbnail)
             <img
@@ -34,8 +34,6 @@
 
     <div class="flex justify-between items-start mt-6">
 
-       
-        
         <div id="quick-add" class="space-y-3 ">
             
             @foreach($this->product->productOptions as $option)
@@ -93,14 +91,8 @@
                 </div>
             @endif
 
-            <div class="flex flex-col text-sm">
-                {{-- Discounted Price (shown only if discount exists) --}}
-                @if($discount && $discountedPrice)
-                    <div class="font-semibold text-lg text-tamanuleaf">
-                        ${{ number_format((float)$discountedPrice, 2) }}
-                    </div>
-                @endif
-
+            <div class="flex text-md gap-2">
+                
                 {{-- Original Price (with strikethrough if discounted) --}}
                 <div class="font-semibold text-red-500 @if($discount) line-through @else text-tamanuleaf @endif ">
                     @if($currentPrice)
@@ -110,24 +102,28 @@
                     @endif
                 </div>
 
-                
+                {{-- Discounted Price (shown only if discount exists) --}}
+                @if($discount && $discountedPrice)
+                    <div class="font-semibold text-tamanuleaf">
+                        ${{ number_format((float)$discountedPrice, 2) }}
+                    </div>
+                @endif
+
             </div>
 
         </div>
 
-        {{-- Add to cart btn --}}
-        <div class="ml-4 flow-root lg:ml-6">
-            <button 
-                wire:click="addToCart"
-                wire:loading.attr="disabled"
-                class="add-to-btn relative group -m-2 p-2 text-gray-500 hover:text-tamanuleaf transition disabled:opacity-50"
-            >
-                <x-heroicon-o-shopping-bag class="h-6 w-6 "/>
-                <span class="absolute bottom-2 left-3 flex items-center justify-center w-4 h-4 text-xs font-bold">+</span>
-                <span class="sr-only">Add to cart button</span>
-            </button>
-        </div>
+    </div>
 
+    {{-- Add to cart btn --}}
+    <div class="flex justify-center text-sm text-center bg-coastalfern/40 mt-6 border-none rounded-lg hover:bg-coastalfern">
+        <button 
+            id="add-to-cart"
+            class=" group -m-2 text-coconuthusk py-4  transition disabled:opacity-50"
+        >
+            Add to Cart
+            <span class="sr-only">Add to cart button</span>
+        </button>
     </div>
 
 </div>

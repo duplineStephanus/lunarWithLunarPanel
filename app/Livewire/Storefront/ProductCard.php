@@ -3,7 +3,6 @@
 namespace App\Livewire\Storefront;
 
 use Livewire\Component;
-use Lunar\Facades\CartSession;
 use Lunar\Models\Discount;
 use Lunar\Models\Product;
 use Lunar\Models\ProductVariant;
@@ -153,31 +152,7 @@ class ProductCard extends Component
     /**
      * NEW: Add selected variant to cart (quantity +1)
      */
-    public function addToCart()
-    {
-        $variant = $this->variant;
 
-        if (!$variant) {
-            session()->flash('error', 'Unable to add to cart. Variant not found.');
-            return;
-        }
-
-        try {
-            // Add 1 quantity to cart (Lunar automatically increments if variant exists)
-            CartSession::add($variant, 1);
-
-            // Get updated cart total
-            $cart = CartSession::current();
-            $cartTotal = $cart->lines->sum('quantity');
-
-            // Dispatch event to update cart total in navigation
-            $this->dispatch('cart-updated', total: $cartTotal);
-
-            session()->flash('message', 'Added to cart successfully!');
-        } catch (\Exception $e) {
-            session()->flash('error', 'Error adding to cart: ' . $e->getMessage());
-        }
-    }
 
     public function render()
     {

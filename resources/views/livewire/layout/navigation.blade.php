@@ -166,12 +166,10 @@ new class extends Component
             <div class="ml-4 flow-root lg:ml-6">
                 <a href="#" class="group -m-2 flex items-center p-2 text-gray-500">
                     <x-heroicon-o-shopping-bag class="h-6 w-6 hover:text-gray-700" />
-                    <livewire:cart.cart-total />
+                    <spa id="cart-count" class="-mt-6 -ml-1 text-gray-500">0</span>
                     <span class="sr-only">items in cart, view bag</span>
                 </a>
             </div>
-
-
           </div>
         </div>
       </div>
