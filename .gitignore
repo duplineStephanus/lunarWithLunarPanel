@@ -18,8 +18,8 @@
 /public/storage
 /storage/*.key
 /storage/pail
-vendor/
-!vendor/lunarphp/
+/vendor/*
+!/vendor/lunarphp/
 Homestead.json
 Homestead.yaml
 Thumbs.db

@@ -118,10 +118,14 @@
     {{-- Add to cart btn --}}
     <div class="flex justify-center text-sm text-center bg-coastalfern/40 mt-6 border-none rounded-lg hover:bg-coastalfern">
         <button 
+            wire:click="addToCart"
+            wire:loading.attr="disabled"
+            wire:target="addToCart"
             id="add-to-cart"
             class=" group -m-2 text-coconuthusk py-4  transition disabled:opacity-50"
         >
-            Add to Cart
+            <span wire:loading.remove wire:target="addToCart">Add to Cart</span>
+            <span wire:loading wire:target="addToCart">Adding...</span>
             <span class="sr-only">Add to cart button</span>
         </button>
     </div>

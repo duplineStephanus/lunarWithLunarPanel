@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Storefront;
 
+use App\Services\CartService;
 use Livewire\Component;
 use Lunar\Models\Discount;
 use Lunar\Models\Product;
@@ -150,8 +151,29 @@ class ProductCard extends Component
     }
 
     /**
-     * NEW: Add selected variant to cart (quantity +1)
+     * Add selected variant to cart (quantity +1)
      */
+    public function addToCart()
+    {
+        $variant = $this->variant;
+
+        if (!$variant) {
+            $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'No variant selected.']);
+            return;
+        }
+
+        // Quantity is always 1 for this card view
+        $newCount = CartService::add($variant->id, 1);
+
+        // Emit a global event so the nav/cart-count component updates immediately
+        $this->emit('cartUpdated', $newCount);
+
+        // Optional browser toast notification
+        $this->dispatchBrowserEvent('notify', [
+            'type' => 'success',
+            'message' => 'Added to cart',
+        ]);
+    }
 
 
     public function render()
