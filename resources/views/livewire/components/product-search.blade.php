@@ -15,7 +15,7 @@
         
         <div class="fixed inset-0 z-50 overflow-y-auto p-4 sm:p-6 md:p-20">
             <div x-on:click.away="open = false" 
-                 class="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-black/5 transition-all">
+                 class="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-full bg-white shadow-2xl ring-1 ring-gray-200/20 transition-all">
                 
                 <div class="relative">
                     <x-heroicon-o-magnifying-glass class="pointer-events-none absolute left-4 top-3.5 h-5 w-5 text-gray-400" />

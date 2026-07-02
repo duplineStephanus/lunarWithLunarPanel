@@ -158,22 +158,20 @@ class ProductCard extends Component
         $variant = $this->variant;
 
         if (!$variant) {
-            $this->dispatchBrowserEvent('notify', ['type' => 'error', 'message' => 'No variant selected.']);
+            $this->dispatch('notify', type: 'error', message: 'No variant selected.');
             return;
         }
 
         // Quantity is always 1 for this card view
         $newCount = CartService::add($variant->id, 1);
 
-        // Emit a global event so the nav/cart-count component updates immediately
-        $this->emit('cartUpdated', $newCount);
+        // dispatch a global event so the nav/cart-count component updates immediately
+        $this->dispatch('cartUpdated')->to('*');
 
-        // Optional browser toast notification
-        $this->dispatchBrowserEvent('notify', [
-            'type' => 'success',
-            'message' => 'Added to cart',
-        ]);
+        // Dispatch browser notification
+        $this->dispatch('notify', type: 'success', message: 'Added to cart');
     }
+
 
 
     public function render()

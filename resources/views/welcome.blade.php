@@ -5,8 +5,5 @@
     </div>
 
      {{-- show customer reviews previews --}}
-
-   
-
-
+     
 </x-app-layout>
